@@ -6,7 +6,7 @@ which I use for `Node.js` servers.
 
 This Armbian type is used for a Set Top Box (STB) that has an [Amlogic](https://github.com/topics/amlogic) type cipset.
 
-## Install
+## [Install Armbian](https://www.mediafire.com/file/ic0kgvrr30tqlrh/Armbian_20.10.img.xz/file)
 
 - Prepare an SD Card with at least 8GB storage and a Card reader.
 - Burn the Armbian.img file with `balenaEtcher` or `Rufus` software and navigate to the SD Card.
