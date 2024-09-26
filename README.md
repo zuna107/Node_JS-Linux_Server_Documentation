@@ -66,16 +66,17 @@ npm install pm2 -g
 ```
 - Create a file named `ecosystem.config.js` in your application directory folder, and fill it in:
 ```
+```js
 module.exports = {
   apps: [
     {
-      name: 'nama_aplikasi_anda',
-      script: './src/index.js', //sesuaikan letak index.js
+      name: 'your_application_name',
+      script: './src/index.js', //customize index.js location
       instances: 1,
       autorestart: true,
       watch: true,
       watch_delay: 1000,
-      max_memory_restart: '1G', //restart saat penggunaan memori mencapai 1GB
+      max_memory_restart: '1G', //restart when memory usage reaches 1GB
       env: {
         NODE_ENV: 'development',
       },
@@ -86,6 +87,7 @@ module.exports = {
   ],
 };
 
+```
 ```
 - Run the application with the command:
 ```
