@@ -65,8 +65,7 @@ npm install
 npm install pm2 -g
 ```
 - Create a file named `ecosystem.config.js` in your application directory folder, and fill it in:
-```
-
+```js
 module.exports = {
   apps: [
     {
