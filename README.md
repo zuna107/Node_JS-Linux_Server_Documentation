@@ -48,3 +48,46 @@ Official Support
 - Debian 12 (✅ Tested, Recommended)
 - Ubuntu Server 20.04 (✅ Tested)
 - Raspberry Pi OS (✅ Tested)
+ 
+
+## Node JS Server Setup
+
+- Upload the application (bot/app, etc) into the `DATA/name_folder` by excluding the `node_modules` folder when uploading your project.
+- Open Casa Os terminal > change directory to your application folder (cd.. > cd DATA > cd folder_application).
+- Install `node_modules` with the command:
+```
+npm install
+```
+
+#### [PM2 Setup](https://pm2.keymetrics.io/)
+- Open Casa Os terminal and install Pm2:
+```
+npm install pm2 -g
+```
+- Create a file named `ecosystem.config.js` in your application directory folder, and fill it in:
+```
+module.exports = {
+  apps: [
+    {
+      name: 'nama_aplikasi_anda',
+      script: './src/index.js', //sesuaikan letak index.js
+      instances: 1,
+      autorestart: true,
+      watch: true,
+      watch_delay: 1000,
+      max_memory_restart: '1G', //restart saat penggunaan memori mencapai 1GB
+      env: {
+        NODE_ENV: 'development',
+      },
+      env_production: {
+        NODE_ENV: 'production',
+      },
+    },
+  ],
+};
+
+```
+- Run the application with the command:
+```
+pm2 start ecosystem.config.js
+```
